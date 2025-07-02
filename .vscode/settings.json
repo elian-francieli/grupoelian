@@ -20,13 +20,4 @@
   "workbench.colorTheme": "Ballerini Theme",
   "window.confirmSaveUntitledWorkspace": false,
   "git.enableSmartCommit": true,
-  "objectscript.conn": {
-    "active": true,
-    "host": "localhost",
-    "port": 52773,
-    "ns": "%SYS",
-    "username": "_SYSTEM",
-    "password": "ccsfran25",
-    "https": false
-  }
 }
