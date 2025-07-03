@@ -1,0 +1,34 @@
+URLs testadas: 25
+✔️ OK: 22 | ⚠️ Erro: 1 | ❌ Falha: 2
+
+
+✅ URLs que responderam OK:
+   - https://atacado.elian.com.br
+   - https://b2b.elian.com.br
+   - https://b2b.grupoelian.com
+   - https://catalogo.elian.com.br
+   - https://catalogo.grupoelian.com
+   - https://crescercom.grupoelian.com
+   - https://logista.elian.com.br
+   - https://logista.grupoelian.com
+   - https://loja.elian.com.br
+   - https://loja.grupoelian.com
+   - https://lojaonline.elian.com.br
+   - https://lojaonline.grupoelian.com
+   - https://lojista.elian.com.br
+   - https://lojista.grupoelian.com
+   - https://portal.elian.com.br
+   - https://vendamais.elian.com.br
+   - https://vendas.elian.com.br
+   - https://vendas.grupoelian.com
+   - https://vender.elian.com.br
+   - https://vender.grupoelian.com
+   - https://www.google.com
+   - https://www.github.com
+
+⚠️ URLs que responderam com erro (status diferente de 200):
+   - https://atacado.grupoelian.com - Status 404
+
+❌ URLs que não responderam ou deram falha:
+   - https://www.siteinexistente123456.com - Erro: HTTPSConnectionPool(host='www.siteinexistente123456.com', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000001F1166BE710>: Failed to resolve 'www.siteinexistente123456.com' ([Errno 11001] getaddrinfo failed)"))
+   - https://httpstat.us/404 - Erro: ('Connection aborted.', ConnectionResetError(10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None))
