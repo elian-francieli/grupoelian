@@ -41,6 +41,8 @@ README - LinkTester
 
 ## 🛠️ Desenvolvimento
 
-Este projeto foi desenvolvido em **Python** utilizando o **Visual Studio Code (VSCode)**.  
+Este projeto foi desenvolvido em **Python** utilizando o **Visual Studio Code (VSCode)**. 
+Foi compilado utilizando **PyInstaller** utilizando o comando: 
+`pyinstaller --onefile linktester.py`
 Os arquivos-fonte estão disponíveis no repositório GitHub vinculado ao e-mail corporativo:  
 **francieli.p@elian.com.br**

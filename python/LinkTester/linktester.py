@@ -1,14 +1,21 @@
 import os
 import requests
 import urllib3
+import sys
 from msal import ConfidentialClientApplication
 from dotenv import load_dotenv
 
 # Ignora apenas o warning visual do SSL
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-# Carrega variáveis de ambiente do arquivo config.env
-dotenv_path = os.path.join(os.path.dirname(__file__), "config.env")
+# Define o caminho base corretamente, mesmo quando empacotado com PyInstaller
+if getattr(sys, 'frozen', False):
+    caminho_base = os.path.dirname(sys.executable)
+else:
+    caminho_base = os.path.dirname(os.path.abspath(__file__))
+
+# Carrega o arquivo config.env a partir do caminho base
+dotenv_path = os.path.join(caminho_base, "config.env")
 load_dotenv(dotenv_path)
 
 CLIENT_ID = os.getenv("CLIENT_ID")
