@@ -1,4 +1,5 @@
 import requests
+import urllib3
 
 # Função para ler URLs de um arquivo .txt
 def ler_urls_do_arquivo(caminho_arquivo):
@@ -12,6 +13,9 @@ def salvar_em_arquivo(lista, nome_arquivo):
         for item in lista:
             f.write(f"{item}\n")
 
+# Ignora apenas o warning visual do SSL
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
 # Função para testar URLs e exibir resultados organizados
 def testar_urls(lista_urls):
     urls_ok = []
@@ -20,7 +24,7 @@ def testar_urls(lista_urls):
 
     for url in lista_urls:
         try:
-            resposta = requests.get(url, timeout=5)
+            resposta = requests.get(url, timeout=5, verify=False)
             if resposta.status_code == 200:
                 urls_ok.append(url)
             else:
@@ -28,7 +32,6 @@ def testar_urls(lista_urls):
         except requests.exceptions.RequestException as e:
             urls_falha.append(f"{url} - Erro: {e}")
 
-    # Exibe resultados organizados
     print("\n✅ URLs que responderam OK:")
     for url in urls_ok:
         print(f"   - {url}")
@@ -54,7 +57,7 @@ def testar_urls(lista_urls):
     print("\nResultados salvos em arquivos: urls_ok.txt, urls_erro.txt, urls_falha.txt")
 
 # Caminho do arquivo de URLs
-caminho_arquivo = "urls.txt"
+caminho_arquivo = r"C:\Users\francieli.p\OneDrive - Grupo ELIAN\GitHub\grupoelian\python\urls.txt"
 
 # Leitura e execução
 urls = ler_urls_do_arquivo(caminho_arquivo)
